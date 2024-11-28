@@ -151,5 +151,5 @@ python3 test_motor_thrust.py
 
 ## Acknowledgement
 
-[blue](https://github.com/Robotic-Decision-Making-Lab/blue)
-[orca4](https://github.com/clydemcqueen/orca4)
+- [blue](https://github.com/Robotic-Decision-Making-Lab/blue)
+- [orca4](https://github.com/clydemcqueen/orca4)
