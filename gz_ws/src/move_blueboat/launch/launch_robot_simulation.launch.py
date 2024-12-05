@@ -18,13 +18,10 @@ def generate_launch_description():
                 '/model/blueboat/joint/motor_port_joint/cmd_thrust@std_msgs/msg/Float64@ignition.msgs.Double',
                 '/model/blueboat/joint/motor_stbd_joint/cmd_thrust@std_msgs/msg/Float64@ignition.msgs.Double',
                 '/model/blueboat/odometry@nav_msgs/msg/Odometry@ignition.msgs.Odometry',
-                '/navsat@sensor_msgs/msg/NavSatFix@ignition.msgs.NavSat',
-                '/model/bluerov2_heavy/odometry@nav_msgs/msg/Odometry@ignition.msgs.Odometry'
+                '/navsat@sensor_msgs/msg/NavSatFix@ignition.msgs.NavSat'
             ],
             output='screen'
         ),
-        
-        
 
         # Optionally, launch your ROS 2 node if you have a custom node for additional logic
         # Node(
