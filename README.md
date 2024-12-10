@@ -58,9 +58,14 @@ Note:
 - IMPORTANT: Run Gazebo first as it contains the ArduPilot plugin. Later, start the ArduPilot SITL (Rover) simulator. Lastly, you can run QGroundControl.
 
 ```bash
+ros2 launch move_blueboat launch_robot_simulation.launch.py
+```
+
+You can alway connect to running Docker container from other terminal,
+
+```bash
 sudo docker exec -it bluerov2_sitl /bin/bash
 
-ros2 launch move_blueboat launch_robot_simulation.launch.py
 ```
 
 ## Run SITL
