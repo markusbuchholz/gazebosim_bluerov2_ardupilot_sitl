@@ -174,7 +174,7 @@ USER $USERNAME
 
 USER root
 
-RUN apt-get update && apt-get install -y ros-humble-joint-state-publisher
+RUN apt-get update && apt-get install -y ros-humble-joint-state-publisher ros-humble-tf-transformations
 
 RUN apt-get update && apt-get install -y \
   ros-humble-mavros \

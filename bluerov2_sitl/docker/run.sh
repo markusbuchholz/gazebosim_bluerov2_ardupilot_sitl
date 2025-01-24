@@ -14,8 +14,8 @@ then
     chmod a+r $XAUTH
 fi
 
-local_gz_ws="/home/markus/bluerov2_ardupilot_SITL/gz_ws"
-local_SITL_Models="/home/markus/bluerov2_ardupilot_SITL/SITL_Models"
+local_gz_ws="/home/markus/underwater/gazebosim_bluerov2_ardupilot_sitl/gz_ws"
+local_SITL_Models="/home/markus/underwater/gazebosim_bluerov2_ardupilot_sitl/SITL_Models"
 #-v "$local_gz_ws:/home/blueboat_sitl/gz_ws" \
 #-v "$local_SITL_Models:/home/blueboat_sitl/SITL_Models" \
 # Running the Docker container with new volume mounts

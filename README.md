@@ -118,6 +118,44 @@ cd  /gz_ws/src/extras_rov
 python3 wp_pos_req.py
 ```
 
+## Thrust (PWM) Control Mode
+
+Setting the ArduSub [RCPassThru](https://ardupilot.org/copter/docs/parameters.html#servo1-function-servo-output-function) parameter allows setting PWM directly for individual motors with values ranging from 1100 to 1900. <br>
+
+BlueRobotics T200 thruster [specification](https://bluerobotics.com/store/thrusters/t100-t200-thrusters/t200-thruster-r2-rp/#:~:text=The%20T200%20propeller%20has%20a,and%203600%20RPM%2016%20V.).
+
+Before use, Passthrough mode must be enabled via a service; the ROS 2 Interface for StonFish does this automatically.<br>
+
+
+**Complete command pipline**
+
+```bash
+#terminal 1
+ros2 launch move_blueboat launch_robot_simulation.launch.py
+
+#terminal 2 (ardupilot folder)
+sim_vehicle.py -v ArduSub -f vectored_6dof --model JSON --map --console -l 55.99541530863445,-3.3010225004910683,0,0
+
+#terminal 3 
+# Run ROS 2 interface for GazeboSim
+cd /home/bluerov2_sitl/gz_ws/src/extras_interface
+
+python3 ros2_simple_bluerov2_interface.py
+```
+
+The motor can be controlled using the topics. 
+
+Example usage,
+
+```bash
+# motor 2
+ros2 topic pub /bluerov2/thruster_2_pwm_set std_msgs/msg/Int32 "{data: 1600}"
+
+# motor 7
+ros2 topic pub /bluerov2/thruster_7_pwm_set std_msgs/msg/Int32 "{data: 1640}"
+```
+
+
 ## Change the Motion Velocity
 
 The following program, before motion, changes the ArduSub parameters influencing the global velocity motion for the vehicle.
