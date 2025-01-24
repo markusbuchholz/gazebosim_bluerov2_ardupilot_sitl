@@ -128,7 +128,7 @@ Before use, Passthrough mode must be enabled via a service; the ROS 2 Interface 
 
 ![image](https://github.com/user-attachments/assets/80fd2cbc-b98d-48e1-9a28-21ccb807980a)
 
-**Complete command pipline**
+**Complete command pipeline**
 
 ```bash
 #terminal 1
