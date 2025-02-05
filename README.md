@@ -13,6 +13,13 @@ SITL allows you to simulate the vehicle hardware and firmware ([ArduSub](https:/
 - Download and Install [QGroundControl](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html) (optional).
 - Install [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) to support Docker to access GPU (required).
 - Repository has been tested on: Ubuntu 22.04, Ubuntu 24.04, ArchLinux (Kernel 6.8).
+- Run these commands, so the system will use the NVIDIA GPU for rendering graphics, which is typically desired for more graphics-intensive tasks.
+
+```bash
+sudo apt install nvidia-prime
+sudo prime-select nvidia
+sudo reboot now
+```
 
 
 ## Build
