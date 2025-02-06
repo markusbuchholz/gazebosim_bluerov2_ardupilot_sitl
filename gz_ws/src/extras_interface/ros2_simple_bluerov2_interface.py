@@ -157,6 +157,7 @@ class BlueROV2ROSInterface(Node):
                 callback_group=ReentrantCallbackGroup()
             )
             self.get_logger().info(f'Subscribed to {topic_name}')
+        self.pwm_channels = [1500] * 8
 
         self.mavlink_thread = threading.Thread(target=self.mavlink_listener, daemon=True)
         self.mavlink_thread.start()
@@ -175,9 +176,8 @@ class BlueROV2ROSInterface(Node):
         )
 
     def control_motor(self, motor_number, pwm_value):
-        channels = [1500] * 8
-        channels[motor_number - 1] = pwm_value
-        self.send_rc_override_for_pwm_set(channels)
+        self.pwm_channels[motor_number - 1] = pwm_value
+        self.send_rc_override_for_pwm_set(self.pwm_channels)
 
     def create_thruster_callback(self, thruster_num):
         def callback(msg):
