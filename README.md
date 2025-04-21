@@ -127,7 +127,7 @@ python3 wp_pos_req.py
 
 For the BlueRov2, you can start with a simple ROS 2 interface and command motion,
 ```bash
-cd  /gz_ws/src/extras_rov
+cd  /gz_ws/extras_interface
 
 python3 ros2_wp_rov_pusher.py
 ```
