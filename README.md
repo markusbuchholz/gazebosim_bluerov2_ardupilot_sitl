@@ -125,6 +125,26 @@ cd  /gz_ws/src/extras_rov
 python3 wp_pos_req.py
 ```
 
+For the BlueRov2, you can start with a simple ROS 2 interface and command motion,
+```bash
+cd  /gz_ws/src/extras_rov
+
+python3 ros2_wp_rov_pusher.py
+```
+
+Use the following topics to move the vehicle,
+
+```bash
+ros2 topic pub --once /bluerov2/waypoint std_msgs/msg/Float32MultiArray "{data: [0.0, 0.0, -2.0]}"
+```
+or
+
+```bash
+ros2 topic pub --once /bluerov2/waypoint std_msgs/msg/Float32MultiArray "{data: [1.0, 0.0, -2.0, 2.0, 2.0, -2.0, 3.0, -2.0, -4.0]}"
+```
+
+
+
 ## Thrust (PWM) Control Mode
 
 Setting the ArduSub [RCPassThru](https://ardupilot.org/copter/docs/parameters.html#servo1-function-servo-output-function) parameter allows setting PWM directly for individual motors with values ranging from 1100 to 1900. <br>
