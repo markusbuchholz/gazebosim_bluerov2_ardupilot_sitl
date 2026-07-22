@@ -77,6 +77,7 @@ WORKDIR /home/$USERNAME
 RUN git clone https://github.com/ArduPilot/ardupilot.git --recurse-submodules
 
 ##############
+######FIX#####
 ##############
 
 # Checkout the commit which works fdor BlueROV2
